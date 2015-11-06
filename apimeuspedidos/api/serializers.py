@@ -5,10 +5,10 @@ from .models import Pedido, ItemPedido
 class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
-        fields = ('cliente',)
+        fields = ('id', 'cliente',)
 
 
 class ItemPedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItemPedido
-        fields = ('nome', 'preco', 'quantidade', 'pedido')
+        fields = ('id', 'nome', 'preco', 'quantidade', 'pedido')

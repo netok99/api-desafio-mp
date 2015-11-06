@@ -15,8 +15,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-@api_view(['GET', 'PUT'])
-# @renderer_classes((JSONRenderer,))
+@api_view(['GET', 'PUT', 'POST'])
 @csrf_exempt
 def pedido(request):
     """Lista com todos os pedidos ou cria um novo pedido."""
@@ -34,7 +33,7 @@ def pedido(request):
         return JSONResponse(serializer.errors, status=400)
 
 
-@api_view(['GET', 'PUT'])
+@api_view(['GET', 'PUT', 'POST'])
 @csrf_exempt
 def item_pedido(request):
     """Lista com todos os item_pedido ou cria um novo item_pedido."""
